@@ -1,0 +1,7 @@
+Setup: `yarn install`
+
+Run: `yarn start`
+
+Test: `yarn run test`
+
+Recommendation Cron: `yarn run nightly`

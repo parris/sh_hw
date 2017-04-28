@@ -1,0 +1,29 @@
+I first start with the following data structure, which maps users to categories listened.
+{
+    A: {1: true, 2: false, 3: false, 4: true, 5: true },
+    B: {1: true, 2: false, 3: true, 4: false, 5: true },
+    C: {1: false, 2: true, 3: true, 4: false, 5: true },
+}
+
+I know I want the end state to be categories a sorted list of similar categories for each category, which approximately like this:
+{
+    1: [5, 4, 3],
+    2: [3, 5],
+    3: [5, 1, 2],
+    4: [1, 5],
+    5: [1, 2, 3, 4],
+}
+
+So, that means, for each category, I'll create a running tally of other categories that people have listened to in relation to this one. I'll need to iterate through every user. If the user listened to "this" category, then I should add to my running tally all the other categories this user listened to:
+
+{
+    1: { 1: 2, 2: 0, 3: 1, 4: 1, 5: 2 },
+    2: { 1: 0, 2: 1, 3: 1, 4: 0, 5: 1 },
+    3: { 1: 1, 2: 1, 3: 2, 4: 0, 5: 2 },
+    4: { 1: 1, 2: 0, 3: 0, 4: 1, 5: 1 },
+    5: { 1: 2, 2: 1, 3: 2, 4: 1, 5: 3 }
+}
+
+Now, I can simply prune and sort to get to the end data structure.
+
+I know this is a rudementary approach; however, it may be all we need to simply show similar categories. We'll know it works through A/B testing.
