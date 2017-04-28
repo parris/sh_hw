@@ -5,7 +5,7 @@ I first start with the following data structure, which maps users to categories 
     C: {1: false, 2: true, 3: true, 4: false, 5: true },
 }
 
-I know I want the end state to be categories a sorted list of similar categories for each category, which approximately like this:
+I know I want the end state to be categories mapped to a sorted list of similar categories for each category, which approximately looks like this:
 {
     1: [5, 4, 3],
     2: [3, 5],
